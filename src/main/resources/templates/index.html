@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Temperature Converter</h1>
+    <form id="convertForm" action="/convert" method="post">
+        <label for="celsius">Celsius:</label>
+        <input type="number" step="0.01" name="celsius" id="celsius" required>
+        <button type="submit" id="convertBtn">Convert</button>
+    </form>
+
+    <div id="result" th:if="${celsius != null}">
+        <p>Celsius: <span th:text="${celsius}">0</span>°C</p>
+        <p>Fahrenheit: <span th:text="${fahrenheit}">32</span>°F</p>
+    </div>
+</div>
+
+<!-- Include your JavaScript file -->
+<script src="/script.js"></script>
+</body>
+</html>
+
